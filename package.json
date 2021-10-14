@@ -4,7 +4,8 @@
   "description": "Create your own Cardano native token",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "token": "ts-node src/createNativeToken.ts"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/weiliy/create-cardano-native-token#readme",
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
@@ -27,5 +30,10 @@
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "cardano-wallet-js": "^1.2.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
   }
 }
