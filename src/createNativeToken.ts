@@ -5,31 +5,16 @@ import {
     Bip32PrivateKey,
     NativeScript,
     Seed,
-    ShelleyWallet,
     TokenWallet,
     WalletsAssetsAvailable,
     WalletServer
 } from 'cardano-wallet-js';
 import config from '../config/testnet-shelley-genesis.json';
 import {CoinSelectionWallet} from "cardano-wallet-js/dist/wallet/coin-selection-wallet";
+import {showWalletInfo} from "./showWalletInfo";
+import {getPaymentWallet} from "./getPaymentWallet";
 
 dotenv.config();
-
-const showWalletInfo = async (wallet: ShelleyWallet) => {
-    console.log('################## Wallet Info #####################');
-    const totalBalance = wallet.getAvailableBalance();
-    const [address] = await wallet.getAddresses();
-    console.log(`totalBalance = ${totalBalance}`);
-    console.log(`address      = ${address.id}`);
-    console.log('####################################################');
-}
-
-const getPaymentWallet = async (walletServer: WalletServer) => {
-    // use the first wallet as payment wallet
-    const [wallet] = await walletServer.wallets();
-
-    return await walletServer.getShelleyWallet(wallet.id);
-}
 
 const main = async () => {
     if (!process.env.WALLET_URL) {
