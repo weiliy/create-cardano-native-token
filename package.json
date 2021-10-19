@@ -2,10 +2,10 @@
   "name": "create-cardano-native-token",
   "version": "1.0.0",
   "description": "Create your own Cardano native token",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "token": "ts-node src/createNativeToken.ts"
+    "start": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^8.0.0",
     "jest": "^27.2.5",
+    "nodemon": "^2.0.13",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
